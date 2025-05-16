@@ -176,7 +176,7 @@ app.post("/api/tts", async (req, res) => {
       body: JSON.stringify({
         text,
         model_id: "eleven_multilingual_v2",
-        voice_settings: { stability: 0.55, similarity_boost: 0.9, speed: 0.9 },
+        voice_settings: { stability: 0.55, similarity_boost: 0.9, speed: 1.3 },
       }),
     });
 
