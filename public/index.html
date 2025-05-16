@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Asistente Avatar Full Screen</title>
+    <!-- Font Awesome para íconos (opcional) -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Video del avatar principal -->
+      <video
+        id="avatarVideo"
+        src="video.mp4"
+        muted
+        loop
+        playsinline
+        style="display: block"
+      ></video>
+
+      <!-- Controles -->
+      <div class="controls">
+        <button id="btnVoice" class="control-btn">
+          <i class="fa-solid fa-microphone"></i>
+        </button>
+        <button id="btnSend" class="control-btn">
+          <i class="fa-solid fa-paper-plane"></i>
+        </button>
+      </div>
+
+      <!-- Contenedor del input pequeño -->
+      <div class="small-input-container">
+        <input
+          type="text"
+          id="hiddenInput"
+          placeholder="Hola Luis Carlos! ¿Cómo te puedo ayudar?"
+        />
+      </div>
+    </div>
+    <div class="calendar-container">
+      <h2>Calendar Events</h2>
+      <button id="btnFetchCalendar">Fetch Calendar Events</button>
+      <ul id="calendarEvents"></ul>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
