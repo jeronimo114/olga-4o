@@ -28,12 +28,18 @@ app.get("/", (req, res) => {
 
 /* ------------ Google Calendar helper ------------ */
 function getCalendarClient() {
-  const keyPath = path.join(__dirname, "olga-460002-21f7b31236b8.json");
   return google.calendar({
     version: "v3",
     auth: new google.auth.GoogleAuth({
-      keyFile: keyPath,
-      scopes: ["https://www.googleapis.com/auth/calendar"], // read + write
+      credentials: {
+        client_email: process.env.GOOGLE_CLIENT_EMAIL,
+        // Render conserva saltos de línea reales; en local convertimos \n literales
+        private_key: (process.env.GOOGLE_PRIVATE_KEY || "").replace(
+          /\\n/g,
+          "\n"
+        ),
+      },
+      scopes: ["https://www.googleapis.com/auth/calendar"], // lectura y escritura
     }),
   });
 }
